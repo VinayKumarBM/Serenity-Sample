@@ -1,0 +1,16 @@
+[
+	{
+		"createNewAccount": {
+			"address": "address1",
+			"aliasAddress": "alias Address",
+			"city": "city",
+			"country": "United States",
+			"firstName": "first",
+			"lastName": "last",
+			"mobilePhone": "9876543210",
+			"password": "password",
+			"state": "Indiana",
+			"zipCode": "12345"
+		}
+	}
+]
