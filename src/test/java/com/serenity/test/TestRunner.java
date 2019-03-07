@@ -7,7 +7,10 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-		format = {"pretty", "html:target/cucumber"}
+		plugin = {"pretty:target/cucumber/cucumber.txt", 
+				"html:target/cucumber/cucumber-html-report",
+				"json:target/cucumber/cucumber.json"
+				}
 		,features= {"features"}
 		,glue = {"com.serenity.stepdefinition"}
 		//,dryRun = true
