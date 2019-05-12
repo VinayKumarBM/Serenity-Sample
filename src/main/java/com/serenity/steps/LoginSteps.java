@@ -3,7 +3,6 @@ package com.serenity.steps;
 import com.serenity.pages.LoginPage;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 
 public class LoginSteps {
 	private LoginPage user;

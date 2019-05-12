@@ -1,8 +1,9 @@
 package com.serenity.pages;
 
 
+import java.util.ArrayList;
 import java.util.List;
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,15 +42,14 @@ public class HomePage extends PageObject{
 		getDriver().manage().window().maximize();
 	}
 
-	public void productMatches(String searchKey) {
+	public List<String> productMatches() {
+		List<String> products = new ArrayList<String>();
 		int productCount = productList.size();
-		System.out.println("Number of Product Listed: "+productCount);
-		String product = null;
+		log.info("Number of Product Listed: "+productCount);
 		for(int i=0; i<productCount; i++) {
-			product = productList.get(i).getText().toLowerCase();
-			System.out.println(product);
-			Assert.assertTrue(product+" does not contain search key "+searchKey, product.contains(searchKey));
+			products.add(productList.get(i).getText().toLowerCase());
 		}
+		return products;
 	}
 
 	public void selectCategory(String category) {
@@ -62,17 +62,8 @@ public class HomePage extends PageObject{
 		getDriver().findElement(By.linkText(subCategory.toUpperCase())).click();
 	}
 
-	public void validateSubCategory(String subCategory) {
-		subCategory = subCategory.toUpperCase().trim();
-		String actualSubCategory = this.subCategory.getText().trim();
-		System.out.println("Sub-Category Expected: "+subCategory+" Actual: "+actualSubCategory);
-		Assert.assertEquals("Sub Category was not matching", subCategory,actualSubCategory);
-	}
-
-	public void validateTitle(String subCategory) {
-		String actualTitle = getDriver().getTitle();
-		System.out.println("Title Expected: "+subCategory+" Actual: "+actualTitle);
-		Assert.assertTrue("Title was not matching", actualTitle.contains(subCategory));
+	public String validateSubCategory() {
+		return subCategory.getText().trim();
 	}
 
 	public void clickOnSignInLink() {

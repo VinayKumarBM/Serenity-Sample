@@ -26,8 +26,7 @@ public class LoginPage extends PageObject{
 	WebElementFacade login_Button;
 	
 	public void enterEmailToCreateAccount(String email) {
-		System.out.println("Entering from Login Page");
-		//createAccountEmail.clear();
+		log.info("Entering from Login Page");
 		createAccountEmail.sendKeys(email);
 	}
 	

@@ -42,10 +42,9 @@ public class CreateAccoutStepDefinition {
 	   createAccountSteps.createAccount(createAccount);
 	}
 
-	@Then("^I should be navigated to My Account screen$")
-	public void i_should_be_navigated_to_My_Account_screen() {
-		myAccountSteps.validateMyAccountPage();
-	    System.out.println("User is in My Accounts screen");
+	@Then("^I should be navigated to (.*) screen$")
+	public void i_should_be_navigated_to_screen(String pageTitle) {
+		myAccountSteps.validateMyAccountPage(pageTitle);
 	}
 	
 	

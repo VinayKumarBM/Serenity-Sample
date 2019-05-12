@@ -7,14 +7,14 @@ import com.serenity.model.CreateAccount;
 import com.serenity.pages.CreateAccountPage;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 
 public class CreateAccountSteps {
-	private static Logger logger = LoggerFactory.getLogger(CreateAccountSteps.class);
+	private static Logger log = LoggerFactory.getLogger(CreateAccountSteps.class);
 	private CreateAccountPage user;
 	
 	@Step
 	public void createAccount(CreateAccount createAccount) {
+		log.info("Entering Account details.");
 		user.enterFirstName(createAccount.createNewAccount.firstName);
 		user.enterLastName(createAccount.createNewAccount.lastName);
 		user.enterPassword(createAccount.createNewAccount.password);
@@ -26,5 +26,6 @@ public class CreateAccountSteps {
 		user.enterMobilePhone(createAccount.createNewAccount.mobilePhone);
 		user.enterAliasAddress(createAccount.createNewAccount.aliasAddress);
 		user.clickOnRegisterButton();
+		log.info("Saving the account details.");
 	}
 }
