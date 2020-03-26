@@ -13,7 +13,6 @@ public class SearchProductStepDefinition {
 
 	@Given("I am on the application")
 	public void i_am_on_the_application() {
-	   System.out.println("Given");
 	   user.launchApplication();
 	}
 
