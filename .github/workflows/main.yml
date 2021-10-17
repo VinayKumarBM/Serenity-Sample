@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Zelenium_Demo 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Zalenium
+      uses: ajinx/zalenium@1.1
+    - name: Run test
+      env:
+        SELENIUM_HUB_HOST: 'localhost'
+      run: mvn clean test 
