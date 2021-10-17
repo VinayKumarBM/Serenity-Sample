@@ -1,7 +1,5 @@
 package com.serenity.stepdefinition;
 
-import java.util.Random;
-
 import com.serenity.model.CreateAccount;
 import com.serenity.steps.CreateAccountSteps;
 import com.serenity.steps.LoginSteps;
@@ -9,7 +7,8 @@ import com.serenity.steps.MyAccountSteps;
 import com.serenity.steps.MyStoreHomeSteps;
 import com.serenity.utilities.JsonReader;
 
-import cucumber.api.java.en.*;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
 public class CreateAccoutStepDefinition {
@@ -29,8 +28,7 @@ public class CreateAccoutStepDefinition {
 
 	@When("^I enter valid email id and click on create account button$")
 	public void i_enter_valid_email_id_and_click_on_create_account_button() {
-		Random random = new Random();
-		int randNumb = random.nextInt(999);
+		long randNumb = System.currentTimeMillis();
 		String email = String.format("test%s@gmail.com", randNumb);
 	    loginSteps.enterEmailToCreateAccount(email);
 	}
