@@ -2,7 +2,7 @@ package com.serenity.test;
 
 import org.junit.runner.RunWith;
 
-import cucumber.api.CucumberOptions;
+import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)

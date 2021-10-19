@@ -9,7 +9,6 @@ public class LoginSteps {
 	
 	@Step
 	public void enterEmailToCreateAccount(String email) {
-		System.out.println("Entering Email id: "+email);
 		user.enterEmailToCreateAccount(email);
 		user.clickOnCreateAccountButton();
 	}

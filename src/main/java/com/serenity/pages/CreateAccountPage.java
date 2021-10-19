@@ -60,8 +60,7 @@ public class CreateAccountPage extends PageObject{
 	}
 	
 	public void enterAddress(String address) {
-		this.address.clear();
-		this.address.sendKeys(address);
+		this.address.type(address);
 	}
 	
 	public void selectCountry(String country) {
@@ -84,9 +83,8 @@ public class CreateAccountPage extends PageObject{
 		this.mobilePhone.sendKeys(mobilePhone);
 	}
 	
-	public void enterAliasAddress(String aliasAddress) {
-		this.aliasAddress.clear();
-		this.aliasAddress.sendKeys(aliasAddress);
+	public void enterAliasAddress(String aliasAddress) {		
+		this.aliasAddress.type(aliasAddress);
 	}
 	
 	public void clickOnRegisterButton() {

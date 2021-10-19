@@ -2,9 +2,9 @@ package com.serenity.stepdefinition;
 
 import com.serenity.steps.MyStoreHomeSteps;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
 public class SearchProductStepDefinition {

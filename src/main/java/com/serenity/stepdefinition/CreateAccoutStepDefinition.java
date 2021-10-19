@@ -7,8 +7,8 @@ import com.serenity.steps.MyAccountSteps;
 import com.serenity.steps.MyStoreHomeSteps;
 import com.serenity.utilities.JsonReader;
 
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
 public class CreateAccoutStepDefinition {
@@ -43,7 +43,5 @@ public class CreateAccoutStepDefinition {
 	@Then("^I should be navigated to (.*) screen$")
 	public void i_should_be_navigated_to_screen(String pageTitle) {
 		myAccountSteps.validateMyAccountPage(pageTitle);
-	}
-	
-	
+	}		
 }

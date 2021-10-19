@@ -31,8 +31,7 @@ public class HomePage extends PageObject{
 	WebElementFacade signIn_Link;
 	
 	public void productSearch(String searchKey) {
-		searchBox.clear();
-		searchBox.sendKeys(searchKey);
+		searchBox.type(searchKey);
 		searchButton.click();
 	}
 

@@ -26,7 +26,7 @@ public class LoginPage extends PageObject{
 	WebElementFacade login_Button;
 	
 	public void enterEmailToCreateAccount(String email) {
-		log.info("Entering from Login Page");
+		log.info("Creating account with "+email);
 		createAccountEmail.sendKeys(email);
 	}
 	
@@ -35,13 +35,11 @@ public class LoginPage extends PageObject{
 	}
 
 	public void enterEmailToSignin(String email) {
-		registeredEmail.clear();
-		registeredEmail.sendKeys(email);
+		registeredEmail.type(email);
 	}
 	
 	public void enterPassword(String password) {
-		this.password.clear();
-		this.password.sendKeys(password);
+		this.password.type(password);
 	}
 	
 	public void clickOnLoginButton() {
