@@ -11,7 +11,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 				"html:target/cucumber/cucumber-html-report",
 				"json:target/cucumber/cucumber.json"
 				}
-		,features= {"features"}
+		,features= {"src/test/resources/features"}
 		,glue = {"com.serenity.stepdefinition"}
 		//,dryRun = true
 		,monochrome = true

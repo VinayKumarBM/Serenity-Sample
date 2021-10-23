@@ -1,5 +1,5 @@
 @createAccount
-Feature: This is to test features related to Create Account
+Feature: Create Account
 
   @createNewAccount
   Scenario Outline: To create a new Account
@@ -10,4 +10,5 @@ Feature: This is to test features related to Create Account
     Then I should be navigated to My account screen
     Examples:
     |content_firstName	|
-    |first				|
+    |Jane				|
+    |John				|

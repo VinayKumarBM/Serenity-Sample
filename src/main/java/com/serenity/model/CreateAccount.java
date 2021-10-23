@@ -14,6 +14,9 @@ public class CreateAccount {
 		public String password;
 		public String state;
 		public String zipCode;
+		public String title;
+		public String dob;
+		public String info;
 	}
 	
 }

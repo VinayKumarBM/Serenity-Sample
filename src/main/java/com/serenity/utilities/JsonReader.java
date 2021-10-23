@@ -1,6 +1,7 @@
 package com.serenity.utilities;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,7 +12,8 @@ import com.google.gson.Gson;
 import com.serenity.model.CreateAccount;
 
 public class JsonReader {
-    private final String createAccountPath = System.getProperty("user.dir")+"/Data/"+"createAccount.json";
+    private final String createAccountPath = new File("src/test/resources/data").getAbsolutePath()+File.separatorChar+"createAccount.json";
+    		//System.getProperty("user.dir")+"/Data/"+"createAccount.json";
 	private List<CreateAccount> createAccountList;
 
     public JsonReader() { 
@@ -21,19 +23,19 @@ public class JsonReader {
     private List<CreateAccount> getBasicCreateAccountData() {
         Gson gson = new Gson();
         BufferedReader bufferedReader = null;
-
         try {
             bufferedReader = new BufferedReader(new FileReader(createAccountPath));
             CreateAccount[] leads = gson.fromJson(bufferedReader, CreateAccount[].class);
             return Arrays.asList(leads);
         } catch (FileNotFoundException e) {
-            throw new RuntimeException("Create Lead test date file not found at path:" + createAccountPath);
+            throw new RuntimeException("Date file not found at path: " + createAccountPath);
         } finally {
             try {
                 if (bufferedReader != null) {
                     bufferedReader.close();
                 }
             } catch (IOException e) {
+            	System.out.println("IOException "+ e);
             }
         }
     }

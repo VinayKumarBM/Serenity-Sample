@@ -1,0 +1,35 @@
+[
+	{
+		"createNewAccount": {
+			"title": "Mr",
+			"address": "2306 Conaway Street",
+			"aliasAddress": "2532 Hanover Street",
+			"city": "Bloomington",
+			"country": "United States",
+			"firstName": "John",
+			"lastName": "Doe",
+			"mobilePhone": "3178091828",
+			"password": "password",
+			"state": "Indiana",
+			"zipCode": "47408",
+			"dob": "1/8/1975",
+			"info": "Pop culture specialist. Twitter maven. Communicator. Troublemaker. Coffee expert. Student."
+		}
+	},{
+		"createNewAccount": {
+			"title": "Mrs",
+			"address": "2306 Conaway Street",
+			"aliasAddress": "4059 Arrowood Drive",
+			"city": "Pensacola",
+			"country": "United States",
+			"firstName": "Jane",
+			"lastName": "Doe",
+			"mobilePhone": "8505298452",
+			"password": "password",
+			"state": "Florida",
+			"zipCode": "32507",
+			"dob": "19/11/1985",
+			"info": "Music ninja. Award-winning food practitioner. Hipster-friendly coffee aficionado."
+		}
+	}
+]

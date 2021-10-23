@@ -15,14 +15,17 @@ public class CreateAccountSteps {
 	@Step
 	public void createAccount(CreateAccount createAccount) {
 		log.info("Entering Account details.");
+		user.selectTitle(createAccount.createNewAccount.title);
 		user.enterFirstName(createAccount.createNewAccount.firstName);
 		user.enterLastName(createAccount.createNewAccount.lastName);
 		user.enterPassword(createAccount.createNewAccount.password);
+		user.selectDOB(createAccount.createNewAccount.dob);
 		user.enterAddress(createAccount.createNewAccount.address);
 		user.enterCity(createAccount.createNewAccount.city);
 		user.selectCountry(createAccount.createNewAccount.country);
 		user.selectState(createAccount.createNewAccount.state);
 		user.enterZipCode(createAccount.createNewAccount.zipCode);
+		user.enterAdditionalInfo(createAccount.createNewAccount.info);
 		user.enterMobilePhone(createAccount.createNewAccount.mobilePhone);
 		user.enterAliasAddress(createAccount.createNewAccount.aliasAddress);
 		user.clickOnRegisterButton();

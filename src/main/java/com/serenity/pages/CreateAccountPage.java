@@ -1,18 +1,19 @@
 package com.serenity.pages;
 
+import java.util.Arrays;
+
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 public class CreateAccountPage extends PageObject{
 	private static final Logger log = LoggerFactory.getLogger(CreateAccountPage.class);
-
-	@FindBy(id = "id_gender1")
-	WebElementFacade title;
+	private static final String TITLE_XPATH = "//div/label//input[@value='%s']";
 	
 	@FindBy(id = "customer_firstname")
 	WebElementFacade firstName;
@@ -45,7 +46,19 @@ public class CreateAccountPage extends PageObject{
 	WebElementFacade aliasAddress;
 	
 	@FindBy(id = "submitAccount")
-	WebElementFacade register_button;
+	WebElementFacade registerButton;
+	
+	@FindBy(id = "days")
+	WebElementFacade daysDropdown;
+	
+	@FindBy(id = "months")
+	WebElementFacade monthsDropdown;
+	
+	@FindBy(id = "years")
+	WebElementFacade yearsDropdown;
+	
+	@FindBy(id = "other")
+	WebElementFacade additionalInfoTextarea;
 	
 	public void enterFirstName(String firstName) {
 		this.firstName.sendKeys(firstName);
@@ -88,6 +101,26 @@ public class CreateAccountPage extends PageObject{
 	}
 	
 	public void clickOnRegisterButton() {
-		this.register_button.click();
+		this.registerButton.click();
+	}
+	
+	public void selectTitle(String title) {
+		if(title.equalsIgnoreCase("MRS")) {
+			getDriver().findElement(By.xpath(String.format(TITLE_XPATH, '2'))).click();
+		} else {
+			getDriver().findElement(By.xpath(String.format(TITLE_XPATH, '1'))).click();
+		}
+	}
+	
+	public void selectDOB(String dob) {
+		String []dobArray = dob.split("/");
+		log.info("DOB: "+Arrays.asList(dobArray));
+		new Select(daysDropdown).selectByValue(dobArray[0]);
+		new Select(monthsDropdown).selectByValue(dobArray[1]);
+		new Select(yearsDropdown).selectByValue(dobArray[2]);
+	}
+	
+	public void enterAdditionalInfo(String info) {
+		additionalInfoTextarea.type(info);
 	}
 }
