@@ -14,6 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<serenity.version>2.6.0</serenity.version>
 		<cucumber.version>6.11.0</cucumber.version>
+		<maven.version>3.0.0-M5</maven.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -81,17 +82,33 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
+				<version>${maven.version}</version>
 				<configuration>
-					<parallel>suitesAndClasses</parallel>
-					<threadCount>4</threadCount>
-					<forkCount>4C</forkCount>
-					<includes>
-						<include>com.serenity.test.TestRunner.java</include>
-					</includes>
-					<skipTests>false</skipTests>
+					<skipTests>true</skipTests>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven.version}</version>
+				<configuration>
+					<includes>
+						<include>**/TestRunner.java</include>
+					</includes>
+					<forkCount>2</forkCount>
+					<reuseForks>true</reuseForks>
+					<parallel>methods</parallel>
+					<threadCount>2</threadCount>
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
