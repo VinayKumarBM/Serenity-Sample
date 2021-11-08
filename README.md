@@ -7,6 +7,17 @@ The good thing about Serenity BDD Framework is that it supports multiple automat
 
 For Demo purpose all the test cases are created for [automationpractice.com](http://automationpractice.com/index.php) site.
 
+### **Some of the key features of this framework:**
+
+1. Test are written using BDD.
+2. It support parallel execution of feature files.
+3. It generates test execution log file.
+4. Test execution can be triggered form command line.
+5. Easy integration to CI/CD pipeline.
+6. Framework uses Page Object Design Pattern, hence there is clean separation between test code and page specific code such as locators.
+7. It generates test execution reports using serenity reports.
+
+
 ## **Required Setup :**
 
 - [Java](https://www.guru99.com/install-java.html) should be installed and configured.
