@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Zelenium_Demo 
     steps:
     - uses: actions/checkout@v2
@@ -11,4 +11,4 @@ jobs:
     - name: Run test
       env:
         SELENIUM_HUB_HOST: 'localhost'
-      run: mvn clean test 
+      run: mvn serenity:aggregate verify 
